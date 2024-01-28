@@ -1,0 +1,23 @@
+meta {
+  name: Create Product List Item
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-list-items
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "productListId": "2bY4ilmk8X23I48kuMAXKi14crW",
+    "productId": "2bYAZ9Zm3ycYnlNEiVQwsbbFhui",
+    "position": 0
+  }
+}
+
+vars:pre-request {
+  storeId: 1234
+}

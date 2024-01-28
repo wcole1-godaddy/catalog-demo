@@ -1,0 +1,23 @@
+meta {
+  name: Update Product
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/products/2bWV7An7kOiTD1mjS1XbsOsZQKP
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Long Sleeve T-Shirt",
+    "sku": "1234"
+  }
+}
+
+vars:pre-request {
+  scope: commerce.product:read
+  storeId: 1234
+}

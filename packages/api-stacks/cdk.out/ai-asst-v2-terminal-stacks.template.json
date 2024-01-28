@@ -1,0 +1,298 @@
+{
+ "Resources": {
+  "aiasstv2bucket01830DBB": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "AccessControl": "Private",
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "BucketName": "gd-commerceut-ai-assistant-api",
+    "LoggingConfiguration": {
+     "DestinationBucketName": "gd-access-commerceut-dev-logs-us-west-2-mhd31curf",
+     "LogFilePrefix": "s3/gd-commerceut-ai-assistant-api"
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "BudgetId",
+      "Value": "001297-03"
+     },
+     {
+      "Key": "Env",
+      "Value": "dev"
+     },
+     {
+      "Key": "LegalOU",
+      "Value": "USA"
+     },
+     {
+      "Key": "OrgOU",
+      "Value": "GD"
+     },
+     {
+      "Key": "Team",
+      "Value": "commerceut"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "ai-asst-v2-terminal-stacks/ai-asst-v2-bucket/Resource"
+   }
+  },
+  "aiasstv2bucketPolicy93CF8E2B": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "aiasstv2bucket01830DBB"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Principal": {
+        "CanonicalUser": {
+         "Fn::GetAtt": [
+          "aiasstv2cloudfrontdistributionOrigin1S3Origin92AF27F4",
+          "S3CanonicalUserId"
+         ]
+        }
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "aiasstv2bucket01830DBB",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:GetObject",
+       "Condition": {
+        "StringEquals": {
+         "AWS:SourceArn": {
+          "Fn::Join": [
+           "",
+           [
+            "arn:aws:cloudfront::350020534489:distribution/",
+            {
+             "Ref": "aiasstv2cloudfrontdistribution23AC20B2"
+            }
+           ]
+          ]
+         }
+        }
+       },
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "cloudfront.amazonaws.com"
+       },
+       "Resource": "arn:aws:s3:::gd-commerceut-ai-assistant-api/*"
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ai-asst-v2-terminal-stacks/ai-asst-v2-bucket/Policy/Resource"
+   }
+  },
+  "aiasstv2waf": {
+   "Type": "AWS::WAFv2::WebACL",
+   "Properties": {
+    "DefaultAction": {
+     "Allow": {}
+    },
+    "Name": "ai-asst-v2-web-acl",
+    "Rules": [
+     {
+      "Name": "CRSRule",
+      "OverrideAction": {
+       "None": {}
+      },
+      "Priority": 0,
+      "Statement": {
+       "ManagedRuleGroupStatement": {
+        "ExcludedRules": [
+         {
+          "Name": "SizeRestrictions_QUERYSTRING"
+         }
+        ],
+        "Name": "AWSManagedRulesCommonRuleSet",
+        "VendorName": "AWS"
+       }
+      },
+      "VisibilityConfig": {
+       "CloudWatchMetricsEnabled": true,
+       "MetricName": "MetricForWebACLCDK-CRS",
+       "SampledRequestsEnabled": true
+      }
+     }
+    ],
+    "Scope": "CLOUDFRONT",
+    "Tags": [
+     {
+      "Key": "BudgetId",
+      "Value": "001297-03"
+     },
+     {
+      "Key": "Env",
+      "Value": "dev"
+     },
+     {
+      "Key": "LegalOU",
+      "Value": "USA"
+     },
+     {
+      "Key": "OrgOU",
+      "Value": "GD"
+     },
+     {
+      "Key": "Team",
+      "Value": "commerceut"
+     }
+    ],
+    "VisibilityConfig": {
+     "CloudWatchMetricsEnabled": true,
+     "MetricName": "MetricForWebACLCDK",
+     "SampledRequestsEnabled": true
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ai-asst-v2-terminal-stacks/ai-asst-v2-waf"
+   }
+  },
+  "aiasstv2cloudfrontaccesscontrol": {
+   "Type": "AWS::CloudFront::OriginAccessControl",
+   "Properties": {
+    "OriginAccessControlConfig": {
+     "Name": "ai-asst-v2-origin-access-control",
+     "OriginAccessControlOriginType": "s3",
+     "SigningBehavior": "always",
+     "SigningProtocol": "sigv4"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ai-asst-v2-terminal-stacks/ai-asst-v2-cloudfront-access-control"
+   }
+  },
+  "aiasstv2cloudfrontdistributionOrigin1S3Origin92AF27F4": {
+   "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+   "Properties": {
+    "CloudFrontOriginAccessIdentityConfig": {
+     "Comment": "Identity for aiasstv2terminalstacksaiasstv2cloudfrontdistributionOrigin1E0F50724"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ai-asst-v2-terminal-stacks/ai-asst-v2-cloudfront-distribution/Origin1/S3Origin/Resource"
+   }
+  },
+  "aiasstv2cloudfrontdistribution23AC20B2": {
+   "Type": "AWS::CloudFront::Distribution",
+   "Properties": {
+    "DistributionConfig": {
+     "Aliases": [
+      "terminal.ai-assistant.api.godaddy.com"
+     ],
+     "DefaultCacheBehavior": {
+      "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+      "Compress": true,
+      "ResponseHeadersPolicyId": "60669652-455b-4ae9-85a4-c4c02393f86c",
+      "TargetOriginId": "aiasstv2terminalstacksaiasstv2cloudfrontdistributionOrigin1E0F50724",
+      "ViewerProtocolPolicy": "redirect-to-https"
+     },
+     "DefaultRootObject": "/static/index.html",
+     "Enabled": true,
+     "HttpVersion": "http2",
+     "IPV6Enabled": true,
+     "Origins": [
+      {
+       "DomainName": {
+        "Fn::GetAtt": [
+         "aiasstv2bucket01830DBB",
+         "RegionalDomainName"
+        ]
+       },
+       "Id": "aiasstv2terminalstacksaiasstv2cloudfrontdistributionOrigin1E0F50724",
+       "OriginAccessControlId": {
+        "Fn::GetAtt": [
+         "aiasstv2cloudfrontaccesscontrol",
+         "Id"
+        ]
+       },
+       "S3OriginConfig": {
+        "OriginAccessIdentity": ""
+       }
+      }
+     ],
+     "ViewerCertificate": {
+      "AcmCertificateArn": "arn:aws:acm:us-east-1:350020534489:certificate/918cfbe3-9527-4ae0-8b41-7aec7bba77de",
+      "MinimumProtocolVersion": "TLSv1.2_2021",
+      "SslSupportMethod": "sni-only"
+     },
+     "WebACLId": {
+      "Fn::GetAtt": [
+       "aiasstv2waf",
+       "Arn"
+      ]
+     }
+    },
+    "Tags": [
+     {
+      "Key": "BudgetId",
+      "Value": "001297-03"
+     },
+     {
+      "Key": "Env",
+      "Value": "dev"
+     },
+     {
+      "Key": "LegalOU",
+      "Value": "USA"
+     },
+     {
+      "Key": "OrgOU",
+      "Value": "GD"
+     },
+     {
+      "Key": "Team",
+      "Value": "commerceut"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ai-asst-v2-terminal-stacks/ai-asst-v2-cloudfront-distribution/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/3WPzQrCMBCEn8V7umoF0WOtCIKg9OJR2iSVbWMC+WmRkHc3tYq9eJrZ2eFbNoVtCotZ2ZuEsjYRWIGPw82bFfidoy23JK/lx41yUQLp8xePcyB9WXcpxPjKqyw/ESqUY7VW0oKP6VnjHWVGKTcmj6FWguzRWI2Vs6gkmRaOjEuL9n0lHziHgfOvMcWEQApulNOUD6uvD0QqxqEx8265geU6Pt0YxES7SHlwKEZ9AUp+yOEQAQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ai-asst-v2-terminal-stacks/CDKMetadata/Default"
+   }
+  }
+ }
+}

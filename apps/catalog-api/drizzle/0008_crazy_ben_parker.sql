@@ -1,0 +1,1 @@
+ALTER TABLE "products" ADD COLUMN "tax_category" varchar(255);

@@ -1,0 +1,28 @@
+meta {
+  name: Batch Product List Item
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-list-item-batches
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "action": "CREATE",
+    "data": [
+      {
+        "productListId": "2bY4ilmk8X23I48kuMAXKi14crW",
+        "productId": "2bYAZH4KQ1RBFWgtfVCqqddZp18",
+        "position": 0
+      }
+    ]
+  }
+}
+
+vars:pre-request {
+  storeId: 1234
+}

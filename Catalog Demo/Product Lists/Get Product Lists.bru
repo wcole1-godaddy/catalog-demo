@@ -1,0 +1,19 @@
+meta {
+  name: Get Product Lists
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-lists?include=product-list-items
+  body: none
+  auth: none
+}
+
+query {
+  include: product-list-items
+}
+
+vars:pre-request {
+  storeId: 1234
+}

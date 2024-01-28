@@ -1,0 +1,19 @@
+{
+  "version": "33.0.0",
+  "files": {
+    "cb7e8e34e2fc93d8f4a161101cfa84bafc5fa2806d4b0376e3644a4ed4697d0d": {
+      "source": {
+        "path": "BootstrapStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "350020534489-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-350020534489-us-east-1",
+          "objectKey": "cb7e8e34e2fc93d8f4a161101cfa84bafc5fa2806d4b0376e3644a4ed4697d0d.json",
+          "region": "us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

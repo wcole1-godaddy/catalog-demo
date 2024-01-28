@@ -1,0 +1,32 @@
+{
+  "version": "33.0.0",
+  "files": {
+    "5cc92ed0cea39e2b8de2dbc527dfb5980a3af9564bd1084d840b9787c7d0467e": {
+      "source": {
+        "path": "asset.5cc92ed0cea39e2b8de2dbc527dfb5980a3af9564bd1084d840b9787c7d0467e",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "166610760322-us-west-2": {
+          "bucketName": "cdk-hnb659fds-assets-166610760322-us-west-2",
+          "objectKey": "5cc92ed0cea39e2b8de2dbc527dfb5980a3af9564bd1084d840b9787c7d0467e.zip",
+          "region": "us-west-2"
+        }
+      }
+    },
+    "b849a5ba9bb72295dcb9ca76cc16e5f74fd998d33789e87476cbbbcc94b8c92c": {
+      "source": {
+        "path": "catalog-api-demo-ecs-stack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "166610760322-us-west-2": {
+          "bucketName": "cdk-hnb659fds-assets-166610760322-us-west-2",
+          "objectKey": "b849a5ba9bb72295dcb9ca76cc16e5f74fd998d33789e87476cbbbcc94b8c92c.json",
+          "region": "us-west-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

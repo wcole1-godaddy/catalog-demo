@@ -1,0 +1,15 @@
+meta {
+  name: Delete Product List
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-lists/1234
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  storeId: 1234
+}

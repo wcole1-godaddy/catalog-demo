@@ -1,0 +1,22 @@
+meta {
+  name: Create Product List
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-lists
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Clothing",
+    "slug": "clothing"
+  }
+}
+
+vars:pre-request {
+  storeId: 1234
+}

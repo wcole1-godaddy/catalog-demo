@@ -1,0 +1,23 @@
+meta {
+  name: Update Product List Item
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-list-items/2bYVCeqJFD9y2ZNuVshdpYvY2yK
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "productId": "2bYAZ9fd4M7V8ut1z0g6MHg318w",
+    "productListId": "2bY4ilmk8X23I48kuMAXKi14crW",
+    "position": 0
+  }
+}
+
+vars:pre-request {
+  storeId: 1234
+}

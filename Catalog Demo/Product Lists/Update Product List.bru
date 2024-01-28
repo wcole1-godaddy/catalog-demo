@@ -1,0 +1,22 @@
+meta {
+  name: Update Product List
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-lists/2bXj2ohMUwK6YJ6ghzZt9bJLjBJ
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Clothes",
+    "slug": "clothes"
+  }
+}
+
+vars:pre-request {
+  storeId: 1234
+}

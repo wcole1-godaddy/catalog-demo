@@ -1,0 +1,1994 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "catalog-api-demo-ecs-ecr-stack": {
+        "id": "catalog-api-demo-ecs-ecr-stack",
+        "path": "catalog-api-demo-ecs-ecr-stack",
+        "children": {
+          "catalog-api-demo-ecr-repository": {
+            "id": "catalog-api-demo-ecr-repository",
+            "path": "catalog-api-demo-ecs-ecr-stack/catalog-api-demo-ecr-repository",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-ecr-stack/catalog-api-demo-ecr-repository/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECR::Repository",
+                  "aws:cdk:cloudformation:props": {
+                    "repositoryName": "catalog-api-demo-ecr-repo",
+                    "tags": [
+                      {
+                        "key": "BudgetId",
+                        "value": "001297-02"
+                      },
+                      {
+                        "key": "doNotShutdown",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Env",
+                        "value": "dev-private"
+                      },
+                      {
+                        "key": "LegalOU",
+                        "value": "USA"
+                      },
+                      {
+                        "key": "OrgOU",
+                        "value": "GD"
+                      },
+                      {
+                        "key": "Team",
+                        "value": "commerceut"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ecr.CfnRepository",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ecr.Repository",
+              "version": "2.92.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "catalog-api-demo-ecs-ecr-stack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "catalog-api-demo-ecs-ecr-stack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.129"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "catalog-api-demo-ecs-ecr-stack/Exports",
+            "children": {
+              "Output{\"Fn::GetAtt\":[\"catalogapidemoecrrepository425CAAD9\",\"Arn\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"catalogapidemoecrrepository425CAAD9\",\"Arn\"]}",
+                "path": "catalog-api-demo-ecs-ecr-stack/Exports/Output{\"Fn::GetAtt\":[\"catalogapidemoecrrepository425CAAD9\",\"Arn\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.92.0"
+                }
+              },
+              "Output{\"Ref\":\"catalogapidemoecrrepository425CAAD9\"}": {
+                "id": "Output{\"Ref\":\"catalogapidemoecrrepository425CAAD9\"}",
+                "path": "catalog-api-demo-ecs-ecr-stack/Exports/Output{\"Ref\":\"catalogapidemoecrrepository425CAAD9\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.129"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@gd-safeguard/godaddy-constructs.GDStack",
+          "version": "5.4.4"
+        }
+      },
+      "catalog-api-demo-ecs-stack": {
+        "id": "catalog-api-demo-ecs-stack",
+        "path": "catalog-api-demo-ecs-stack",
+        "children": {
+          "catalog-api-demo-ecs-certificate": {
+            "id": "catalog-api-demo-ecs-certificate",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-ecs-certificate",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.92.0"
+            }
+          },
+          "GDVpc": {
+            "id": "GDVpc",
+            "path": "catalog-api-demo-ecs-stack/GDVpc",
+            "children": {
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "catalog-api-demo-ecs-stack/GDVpc/PublicSubnet1",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "catalog-api-demo-ecs-stack/GDVpc/PublicSubnet2",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "PrivateSubnet1": {
+                "id": "PrivateSubnet1",
+                "path": "catalog-api-demo-ecs-stack/GDVpc/PrivateSubnet1",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "PrivateSubnet2": {
+                "id": "PrivateSubnet2",
+                "path": "catalog-api-demo-ecs-stack/GDVpc/PrivateSubnet2",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "PrivateSubnet3": {
+                "id": "PrivateSubnet3",
+                "path": "catalog-api-demo-ecs-stack/GDVpc/PrivateSubnet3",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "PrivateSubnet4": {
+                "id": "PrivateSubnet4",
+                "path": "catalog-api-demo-ecs-stack/GDVpc/PrivateSubnet4",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "PrivateSubnet5": {
+                "id": "PrivateSubnet5",
+                "path": "catalog-api-demo-ecs-stack/GDVpc/PrivateSubnet5",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "PrivateSubnet6": {
+                "id": "PrivateSubnet6",
+                "path": "catalog-api-demo-ecs-stack/GDVpc/PrivateSubnet6",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "PrivateSubnet7": {
+                "id": "PrivateSubnet7",
+                "path": "catalog-api-demo-ecs-stack/GDVpc/PrivateSubnet7",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "PrivateSubnet8": {
+                "id": "PrivateSubnet8",
+                "path": "catalog-api-demo-ecs-stack/GDVpc/PrivateSubnet8",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-cluster": {
+            "id": "catalog-api-demo-cluster",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-cluster",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-cluster/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::Cluster",
+                  "aws:cdk:cloudformation:props": {
+                    "clusterName": "catalog-api-demo-cluster",
+                    "tags": [
+                      {
+                        "key": "BudgetId",
+                        "value": "001297-02"
+                      },
+                      {
+                        "key": "doNotShutdown",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Env",
+                        "value": "dev-private"
+                      },
+                      {
+                        "key": "LegalOU",
+                        "value": "USA"
+                      },
+                      {
+                        "key": "OrgOU",
+                        "value": "GD"
+                      },
+                      {
+                        "key": "Team",
+                        "value": "commerceut"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ecs.CfnCluster",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ecs.Cluster",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-service": {
+            "id": "catalog-api-demo-service",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-service",
+            "children": {
+              "subnet-subnet-023521a11c0d4c7b5": {
+                "id": "subnet-subnet-023521a11c0d4c7b5",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-service/subnet-subnet-023521a11c0d4c7b5",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "subnet-subnet-0d0c69aeac2e701ef": {
+                "id": "subnet-subnet-0d0c69aeac2e701ef",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-service/subnet-subnet-0d0c69aeac2e701ef",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.129"
+            }
+          },
+          "catalog-api-demo-execution-policy": {
+            "id": "catalog-api-demo-execution-policy",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-execution-policy",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-execution-policy/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                  "aws:cdk:cloudformation:props": {
+                    "policyDocument": {
+                      "Statement": [
+                        {
+                          "Action": [
+                            "ecr:GetAuthorizationToken",
+                            "ecr:BatchGetImage",
+                            "ecr:GetDownloadUrlForLayer"
+                          ],
+                          "Effect": "Allow",
+                          "Resource": "*"
+                        },
+                        {
+                          "Action": "logs:*",
+                          "Effect": "Allow",
+                          "Resource": "*"
+                        },
+                        {
+                          "Action": "ssm:*",
+                          "Effect": "Allow",
+                          "Resource": "*"
+                        },
+                        {
+                          "Action": "textract:*",
+                          "Effect": "Allow",
+                          "Resource": "*"
+                        },
+                        {
+                          "Action": "s3:*",
+                          "Effect": "Allow",
+                          "Resource": "*"
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "policyName": "catalog-api-demo-execution-policy",
+                    "roles": [
+                      {
+                        "Ref": "catalogapidemotaskrole1452C413"
+                      },
+                      {
+                        "Ref": "catalogapidemoexecutionroleE636AA05"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Policy",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-task-role": {
+            "id": "catalog-api-demo-task-role",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-task-role",
+            "children": {
+              "Importcatalog-api-demo-task-role": {
+                "id": "Importcatalog-api-demo-task-role",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-task-role/Importcatalog-api-demo-task-role",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-task-role/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "ecs-tasks.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::166610760322:policy/GD-AWS-KMS-USER"
+                          ]
+                        ]
+                      },
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::166610760322:policy/GDDeployRoleAccessPolicy"
+                          ]
+                        ]
+                      },
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::166610760322:policy/AllowResourcesAccessToCloudWatchPolicy"
+                          ]
+                        ]
+                      }
+                    ],
+                    "roleName": "catalog-api-demo-task-role",
+                    "tags": [
+                      {
+                        "key": "BudgetId",
+                        "value": "001297-02"
+                      },
+                      {
+                        "key": "doNotShutdown",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Env",
+                        "value": "dev-private"
+                      },
+                      {
+                        "key": "LegalOU",
+                        "value": "USA"
+                      },
+                      {
+                        "key": "OrgOU",
+                        "value": "GD"
+                      },
+                      {
+                        "key": "roleType",
+                        "value": "SSG-Custom"
+                      },
+                      {
+                        "key": "Team",
+                        "value": "commerceut"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Role",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-execution-role": {
+            "id": "catalog-api-demo-execution-role",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-execution-role",
+            "children": {
+              "Importcatalog-api-demo-execution-role": {
+                "id": "Importcatalog-api-demo-execution-role",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-execution-role/Importcatalog-api-demo-execution-role",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-execution-role/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "ecs-tasks.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+                          ]
+                        ]
+                      },
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::166610760322:policy/GD-AWS-KMS-USER"
+                          ]
+                        ]
+                      },
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::166610760322:policy/AllowResourcesAccessToCloudWatchPolicy"
+                          ]
+                        ]
+                      }
+                    ],
+                    "roleName": "catalog-api-demo-execution-role",
+                    "tags": [
+                      {
+                        "key": "BudgetId",
+                        "value": "001297-02"
+                      },
+                      {
+                        "key": "doNotShutdown",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Env",
+                        "value": "dev-private"
+                      },
+                      {
+                        "key": "LegalOU",
+                        "value": "USA"
+                      },
+                      {
+                        "key": "OrgOU",
+                        "value": "GD"
+                      },
+                      {
+                        "key": "roleType",
+                        "value": "SSG-Custom"
+                      },
+                      {
+                        "key": "Team",
+                        "value": "commerceut"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                  "version": "2.92.0"
+                }
+              },
+              "DefaultPolicy": {
+                "id": "DefaultPolicy",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-execution-role/DefaultPolicy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "catalog-api-demo-ecs-stack/catalog-api-demo-execution-role/DefaultPolicy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                      "aws:cdk:cloudformation:props": {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": [
+                                "ecr:BatchCheckLayerAvailability",
+                                "ecr:GetDownloadUrlForLayer",
+                                "ecr:BatchGetImage"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::ImportValue": "catalog-api-demo-ecs-ecr-stack:ExportsOutputFnGetAttcatalogapidemoecrrepository425CAAD9Arn92BC2F34"
+                              }
+                            },
+                            {
+                              "Action": "ecr:GetAuthorizationToken",
+                              "Effect": "Allow",
+                              "Resource": "*"
+                            },
+                            {
+                              "Action": [
+                                "logs:CreateLogStream",
+                                "logs:PutLogEvents"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::GetAtt": [
+                                  "catalogapidemotaskdefcatalogapidemocontainerLogGroup2476E96E",
+                                  "Arn"
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "policyName": "catalogapidemoexecutionroleDefaultPolicyCBEF4969",
+                        "roles": [
+                          {
+                            "Ref": "catalogapidemoexecutionroleE636AA05"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                      "version": "2.92.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Policy",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Role",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-security-group-service": {
+            "id": "catalog-api-demo-security-group-service",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-security-group-service",
+            "children": {
+              "from catalogapidemoecsstacksecuritygroupidA90F18CB:4000": {
+                "id": "from catalogapidemoecsstacksecuritygroupidA90F18CB:4000",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-security-group-service/from catalogapidemoecsstacksecuritygroupidA90F18CB:4000",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                  "aws:cdk:cloudformation:props": {
+                    "description": "Load balancer to target",
+                    "fromPort": 4000,
+                    "groupId": "sg-0e9f341372bf73d78",
+                    "ipProtocol": "tcp",
+                    "sourceSecurityGroupId": "sg-0e9f341372bf73d78",
+                    "toPort": 4000
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroupIngress",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-task-def": {
+            "id": "catalog-api-demo-task-def",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-task-def",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-task-def/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                  "aws:cdk:cloudformation:props": {
+                    "containerDefinitions": [
+                      {
+                        "cpu": 256,
+                        "essential": true,
+                        "image": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              {
+                                "Fn::Select": [
+                                  4,
+                                  {
+                                    "Fn::Split": [
+                                      ":",
+                                      {
+                                        "Fn::ImportValue": "catalog-api-demo-ecs-ecr-stack:ExportsOutputFnGetAttcatalogapidemoecrrepository425CAAD9Arn92BC2F34"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              ".dkr.ecr.",
+                              {
+                                "Fn::Select": [
+                                  3,
+                                  {
+                                    "Fn::Split": [
+                                      ":",
+                                      {
+                                        "Fn::ImportValue": "catalog-api-demo-ecs-ecr-stack:ExportsOutputFnGetAttcatalogapidemoecrrepository425CAAD9Arn92BC2F34"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              ".",
+                              {
+                                "Ref": "AWS::URLSuffix"
+                              },
+                              "/",
+                              {
+                                "Fn::ImportValue": "catalog-api-demo-ecs-ecr-stack:ExportsOutputRefcatalogapidemoecrrepository425CAAD9A6F1B4F6"
+                              },
+                              ":latest"
+                            ]
+                          ]
+                        },
+                        "memory": 512,
+                        "memoryReservation": 512,
+                        "name": "catalog-api-demo-container",
+                        "portMappings": [
+                          {
+                            "containerPort": 4000,
+                            "hostPort": 4000,
+                            "protocol": "tcp"
+                          }
+                        ],
+                        "logConfiguration": {
+                          "logDriver": "awslogs",
+                          "options": {
+                            "awslogs-group": {
+                              "Ref": "catalogapidemotaskdefcatalogapidemocontainerLogGroup2476E96E"
+                            },
+                            "awslogs-stream-prefix": "catalog-api-demo",
+                            "awslogs-region": "us-west-2"
+                          }
+                        },
+                        "environment": [
+                          {
+                            "name": "NODE_ENV",
+                            "value": "dev-private"
+                          }
+                        ]
+                      }
+                    ],
+                    "cpu": "256",
+                    "executionRoleArn": {
+                      "Fn::GetAtt": [
+                        "catalogapidemoexecutionroleE636AA05",
+                        "Arn"
+                      ]
+                    },
+                    "family": "catalog-api-demo-task-def",
+                    "memory": "512",
+                    "networkMode": "awsvpc",
+                    "requiresCompatibilities": [
+                      "FARGATE"
+                    ],
+                    "runtimePlatform": {
+                      "cpuArchitecture": "X86_64"
+                    },
+                    "tags": [
+                      {
+                        "key": "BudgetId",
+                        "value": "001297-02"
+                      },
+                      {
+                        "key": "doNotShutdown",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Env",
+                        "value": "dev-private"
+                      },
+                      {
+                        "key": "LegalOU",
+                        "value": "USA"
+                      },
+                      {
+                        "key": "OrgOU",
+                        "value": "GD"
+                      },
+                      {
+                        "key": "Team",
+                        "value": "commerceut"
+                      }
+                    ],
+                    "taskRoleArn": {
+                      "Fn::GetAtt": [
+                        "catalogapidemotaskrole1452C413",
+                        "Arn"
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ecs.CfnTaskDefinition",
+                  "version": "2.92.0"
+                }
+              },
+              "catalog-api-demo-container": {
+                "id": "catalog-api-demo-container",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-task-def/catalog-api-demo-container",
+                "children": {
+                  "LogGroup": {
+                    "id": "LogGroup",
+                    "path": "catalog-api-demo-ecs-stack/catalog-api-demo-task-def/catalog-api-demo-container/LogGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "catalog-api-demo-ecs-stack/catalog-api-demo-task-def/catalog-api-demo-container/LogGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "tags": [
+                              {
+                                "key": "BudgetId",
+                                "value": "001297-02"
+                              },
+                              {
+                                "key": "doNotShutdown",
+                                "value": "false"
+                              },
+                              {
+                                "key": "Env",
+                                "value": "dev-private"
+                              },
+                              {
+                                "key": "LegalOU",
+                                "value": "USA"
+                              },
+                              {
+                                "key": "OrgOU",
+                                "value": "GD"
+                              },
+                              {
+                                "key": "Team",
+                                "value": "commerceut"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_logs.CfnLogGroup",
+                          "version": "2.92.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.LogGroup",
+                      "version": "2.92.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ecs.ContainerDefinition",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ecs.FargateTaskDefinition",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-secrets": {
+            "id": "catalog-api-demo-secrets",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-secrets",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-srvc": {
+            "id": "catalog-api-demo-srvc",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-srvc",
+            "children": {
+              "Service": {
+                "id": "Service",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-srvc/Service",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::Service",
+                  "aws:cdk:cloudformation:props": {
+                    "cluster": {
+                      "Ref": "catalogapidemocluster50E6F681"
+                    },
+                    "deploymentConfiguration": {
+                      "maximumPercent": 200,
+                      "minimumHealthyPercent": 50,
+                      "deploymentCircuitBreaker": {
+                        "enable": true,
+                        "rollback": true
+                      },
+                      "alarms": {
+                        "alarmNames": [],
+                        "enable": false,
+                        "rollback": false
+                      }
+                    },
+                    "deploymentController": {
+                      "type": "ECS"
+                    },
+                    "desiredCount": 2,
+                    "enableEcsManagedTags": false,
+                    "healthCheckGracePeriodSeconds": 60,
+                    "launchType": "FARGATE",
+                    "loadBalancers": [
+                      {
+                        "targetGroupArn": {
+                          "Ref": "catalogapidemotgDAB2AC5F"
+                        },
+                        "containerName": "catalog-api-demo-container",
+                        "containerPort": 4000
+                      }
+                    ],
+                    "networkConfiguration": {
+                      "awsvpcConfiguration": {
+                        "assignPublicIp": "DISABLED",
+                        "subnets": [
+                          "subnet-023521a11c0d4c7b5",
+                          "subnet-0d0c69aeac2e701ef"
+                        ],
+                        "securityGroups": [
+                          "sg-0e9f341372bf73d78"
+                        ]
+                      }
+                    },
+                    "serviceName": "catalog-api-demo-srvc",
+                    "tags": [
+                      {
+                        "key": "BudgetId",
+                        "value": "001297-02"
+                      },
+                      {
+                        "key": "doNotShutdown",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Env",
+                        "value": "dev-private"
+                      },
+                      {
+                        "key": "LegalOU",
+                        "value": "USA"
+                      },
+                      {
+                        "key": "OrgOU",
+                        "value": "GD"
+                      },
+                      {
+                        "key": "Team",
+                        "value": "commerceut"
+                      }
+                    ],
+                    "taskDefinition": {
+                      "Ref": "catalogapidemotaskdefCB248AFB"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ecs.CfnService",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ecs.FargateService",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-load-balancer": {
+            "id": "catalog-api-demo-load-balancer",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-load-balancer",
+            "children": {
+              "catalog-api-demo-waf": {
+                "id": "catalog-api-demo-waf",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-load-balancer/catalog-api-demo-waf",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::WAFv2::WebACL",
+                  "aws:cdk:cloudformation:props": {
+                    "defaultAction": {
+                      "allow": {}
+                    },
+                    "name": "catalog-api-demo-web-acl",
+                    "rules": [
+                      {
+                        "name": "AWS-AWSManagedRulesCommonRuleSet",
+                        "priority": 0,
+                        "overrideAction": {
+                          "none": {}
+                        },
+                        "statement": {
+                          "managedRuleGroupStatement": {
+                            "name": "AWSManagedRulesCommonRuleSet",
+                            "vendorName": "AWS",
+                            "excludedRules": [
+                              {
+                                "name": "SizeRestrictions_BODY"
+                              },
+                              {
+                                "name": "CrossSiteScripting_BODY"
+                              },
+                              {
+                                "name": "SQLi_BODY"
+                              }
+                            ]
+                          }
+                        },
+                        "visibilityConfig": {
+                          "cloudWatchMetricsEnabled": true,
+                          "metricName": "MetricForWebACLCDK-CRS",
+                          "sampledRequestsEnabled": true
+                        }
+                      },
+                      {
+                        "name": "AWS-AWSManagedRulesSQLiRuleSet",
+                        "priority": 1,
+                        "overrideAction": {
+                          "none": {}
+                        },
+                        "statement": {
+                          "managedRuleGroupStatement": {
+                            "name": "AWSManagedRulesSQLiRuleSet",
+                            "vendorName": "AWS",
+                            "excludedRules": [
+                              {
+                                "name": "SQLi_BODY"
+                              }
+                            ]
+                          }
+                        },
+                        "visibilityConfig": {
+                          "cloudWatchMetricsEnabled": true,
+                          "metricName": "MetricForWebACLCDK-CRS",
+                          "sampledRequestsEnabled": true
+                        }
+                      }
+                    ],
+                    "scope": "REGIONAL",
+                    "tags": [
+                      {
+                        "key": "BudgetId",
+                        "value": "001297-02"
+                      },
+                      {
+                        "key": "doNotShutdown",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Env",
+                        "value": "dev-private"
+                      },
+                      {
+                        "key": "LegalOU",
+                        "value": "USA"
+                      },
+                      {
+                        "key": "OrgOU",
+                        "value": "GD"
+                      },
+                      {
+                        "key": "Team",
+                        "value": "commerceut"
+                      }
+                    ],
+                    "visibilityConfig": {
+                      "cloudWatchMetricsEnabled": true,
+                      "metricName": "MetricForWebACLCDK",
+                      "sampledRequestsEnabled": true
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL",
+                  "version": "2.92.0"
+                }
+              },
+              "catalog-api-demo-listener-rule": {
+                "id": "catalog-api-demo-listener-rule",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-load-balancer/catalog-api-demo-listener-rule",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "catalog-api-demo-ecs-stack/catalog-api-demo-load-balancer/catalog-api-demo-listener-rule/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::ListenerRule",
+                      "aws:cdk:cloudformation:props": {
+                        "actions": [
+                          {
+                            "type": "forward",
+                            "targetGroupArn": {
+                              "Ref": "catalogapidemotgDAB2AC5F"
+                            }
+                          }
+                        ],
+                        "conditions": [
+                          {
+                            "field": "host-header",
+                            "hostHeaderConfig": {
+                              "values": [
+                                "*.test-godaddy.com",
+                                "*.ote-godaddy.com",
+                                "*.dev-godaddy.com",
+                                "*.godaddy.com",
+                                "*.secureserver.net"
+                              ]
+                            }
+                          }
+                        ],
+                        "listenerArn": {
+                          "Ref": "catalogapidemolbhttpslistenerB1C47E35"
+                        },
+                        "priority": 1000
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnListenerRule",
+                      "version": "2.92.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationListenerRule",
+                  "version": "2.92.0"
+                }
+              },
+              "catalog-api-demo-waf-association": {
+                "id": "catalog-api-demo-waf-association",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-load-balancer/catalog-api-demo-waf-association",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::WAFv2::WebACLAssociation",
+                  "aws:cdk:cloudformation:props": {
+                    "resourceArn": {
+                      "Ref": "catalogapidemolb5A8C39F1"
+                    },
+                    "webAclArn": {
+                      "Fn::GetAtt": [
+                        "catalogapidemoloadbalancercatalogapidemowaf034909FA",
+                        "Arn"
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACLAssociation",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.129"
+            }
+          },
+          "security-group-id": {
+            "id": "security-group-id",
+            "path": "catalog-api-demo-ecs-stack/security-group-id",
+            "children": {
+              "to catalogapidemoecsstackcatalogapidemosecuritygroupservice45F8CE06:4000": {
+                "id": "to catalogapidemoecsstackcatalogapidemosecuritygroupservice45F8CE06:4000",
+                "path": "catalog-api-demo-ecs-stack/security-group-id/to catalogapidemoecsstackcatalogapidemosecuritygroupservice45F8CE06:4000",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupEgress",
+                  "aws:cdk:cloudformation:props": {
+                    "description": "Load balancer to target",
+                    "destinationSecurityGroupId": "sg-0e9f341372bf73d78",
+                    "fromPort": 4000,
+                    "groupId": "sg-0e9f341372bf73d78",
+                    "ipProtocol": "tcp",
+                    "toPort": 4000
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroupEgress",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-lb": {
+            "id": "catalog-api-demo-lb",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-lb",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-lb/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                  "aws:cdk:cloudformation:props": {
+                    "loadBalancerAttributes": [
+                      {
+                        "key": "deletion_protection.enabled",
+                        "value": "false"
+                      }
+                    ],
+                    "name": "catalog-api-demo-lb",
+                    "scheme": "internet-facing",
+                    "securityGroups": [
+                      "sg-0e9f341372bf73d78"
+                    ],
+                    "subnets": [
+                      "subnet-0325792d023ba95a1",
+                      "subnet-08ce7e1938d5a8016"
+                    ],
+                    "tags": [
+                      {
+                        "key": "BudgetId",
+                        "value": "001297-02"
+                      },
+                      {
+                        "key": "doNotShutdown",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Env",
+                        "value": "dev-private"
+                      },
+                      {
+                        "key": "LegalOU",
+                        "value": "USA"
+                      },
+                      {
+                        "key": "OrgOU",
+                        "value": "GD"
+                      },
+                      {
+                        "key": "Team",
+                        "value": "commerceut"
+                      }
+                    ],
+                    "type": "application"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnLoadBalancer",
+                  "version": "2.92.0"
+                }
+              },
+              "https-listener": {
+                "id": "https-listener",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-lb/https-listener",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "catalog-api-demo-ecs-stack/catalog-api-demo-lb/https-listener/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                      "aws:cdk:cloudformation:props": {
+                        "certificates": [
+                          {
+                            "certificateArn": "arn:aws:acm:us-west-2:166610760322:certificate/cf37fa20-8629-485b-9174-d1d9e1e939e3"
+                          }
+                        ],
+                        "defaultActions": [
+                          {
+                            "type": "fixed-response",
+                            "fixedResponseConfig": {
+                              "statusCode": "403",
+                              "contentType": "application/json",
+                              "messageBody": "Access Denied"
+                            }
+                          }
+                        ],
+                        "loadBalancerArn": {
+                          "Ref": "catalogapidemolb5A8C39F1"
+                        },
+                        "port": 443,
+                        "protocol": "HTTPS",
+                        "sslPolicy": "ELBSecurityPolicy-TLS-1-2-2017-01"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnListener",
+                      "version": "2.92.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationListener",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationLoadBalancer",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-tg": {
+            "id": "catalog-api-demo-tg",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-tg",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-tg/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "healthCheckEnabled": false,
+                    "healthCheckIntervalSeconds": 10,
+                    "healthCheckPath": "/health",
+                    "healthCheckPort": "4000",
+                    "healthCheckProtocol": "HTTPS",
+                    "healthCheckTimeoutSeconds": 5,
+                    "healthyThresholdCount": 5,
+                    "port": 4000,
+                    "protocol": "HTTPS",
+                    "protocolVersion": "HTTP1",
+                    "tags": [
+                      {
+                        "key": "BudgetId",
+                        "value": "001297-02"
+                      },
+                      {
+                        "key": "doNotShutdown",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Env",
+                        "value": "dev-private"
+                      },
+                      {
+                        "key": "LegalOU",
+                        "value": "USA"
+                      },
+                      {
+                        "key": "OrgOU",
+                        "value": "GD"
+                      },
+                      {
+                        "key": "Team",
+                        "value": "commerceut"
+                      }
+                    ],
+                    "targetGroupAttributes": [
+                      {
+                        "key": "deregistration_delay.timeout_seconds",
+                        "value": "30"
+                      },
+                      {
+                        "key": "stickiness.enabled",
+                        "value": "false"
+                      },
+                      {
+                        "key": "load_balancing.algorithm.type",
+                        "value": "round_robin"
+                      }
+                    ],
+                    "targetType": "ip",
+                    "unhealthyThresholdCount": 2,
+                    "vpcId": "vpc-004057ec24194ccf7"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnTargetGroup",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationTargetGroup",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-auto-scaling": {
+            "id": "catalog-api-demo-auto-scaling",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-auto-scaling",
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.129"
+            }
+          },
+          "[object Object]-service-linked-role": {
+            "id": "[object Object]-service-linked-role",
+            "path": "catalog-api-demo-ecs-stack/[object Object]-service-linked-role",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.92.0"
+            }
+          },
+          "[object Object]-scalable-target": {
+            "id": "[object Object]-scalable-target",
+            "path": "catalog-api-demo-ecs-stack/[object Object]-scalable-target",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/[object Object]-scalable-target/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApplicationAutoScaling::ScalableTarget",
+                  "aws:cdk:cloudformation:props": {
+                    "maxCapacity": 10,
+                    "minCapacity": 2,
+                    "resourceId": "service/catalog-api-demo-cluster/catalog-api-demo-srvc",
+                    "roleArn": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "arn:",
+                          {
+                            "Ref": "AWS::Partition"
+                          },
+                          ":iam::166610760322:role/aws-service-role/ecs.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_ECSService"
+                        ]
+                      ]
+                    },
+                    "scalableDimension": "ecs:service:DesiredCount",
+                    "serviceNamespace": "ecs"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_applicationautoscaling.CfnScalableTarget",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_applicationautoscaling.ScalableTarget",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-auto-scaling-policy": {
+            "id": "catalog-api-demo-auto-scaling-policy",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-auto-scaling-policy",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-auto-scaling-policy/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApplicationAutoScaling::ScalingPolicy",
+                  "aws:cdk:cloudformation:props": {
+                    "policyName": "catalog-api-demo-srvc-auto-scaling-policy",
+                    "policyType": "TargetTrackingScaling",
+                    "scalingTargetId": {
+                      "Ref": "objectObjectscalabletarget5722C758"
+                    },
+                    "targetTrackingScalingPolicyConfiguration": {
+                      "predefinedMetricSpecification": {
+                        "predefinedMetricType": "ECSServiceAverageCPUUtilization"
+                      },
+                      "targetValue": 50
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_applicationautoscaling.CfnScalingPolicy",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_applicationautoscaling.TargetTrackingScalingPolicy",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-rotator": {
+            "id": "catalog-api-demo-rotator",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator",
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.129"
+            }
+          },
+          "catalog-api-demo-global-bucket": {
+            "id": "catalog-api-demo-global-bucket",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-global-bucket",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-rotator-execution-role": {
+            "id": "catalog-api-demo-rotator-execution-role",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-execution-role",
+            "children": {
+              "Importcatalog-api-demo-rotator-execution-role": {
+                "id": "Importcatalog-api-demo-rotator-execution-role",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-execution-role/Importcatalog-api-demo-rotator-execution-role",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-execution-role/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "lambda.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "description": "Used by the rotator to rotate the service",
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:aws:iam::",
+                            {
+                              "Ref": "AWS::AccountId"
+                            },
+                            ":policy/AllowResourcesAccessToCloudWatchPolicy"
+                          ]
+                        ]
+                      }
+                    ],
+                    "policies": [
+                      {
+                        "policyName": "root",
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "ecs:UpdateService",
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:aws:ecs:",
+                                    {
+                                      "Ref": "AWS::Region"
+                                    },
+                                    ":",
+                                    {
+                                      "Ref": "AWS::AccountId"
+                                    },
+                                    ":service/catalog-api-demo-cluster/catalog-api-demo-srvc"
+                                  ]
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    ],
+                    "tags": [
+                      {
+                        "key": "BudgetId",
+                        "value": "001297-02"
+                      },
+                      {
+                        "key": "doNotShutdown",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Env",
+                        "value": "dev-private"
+                      },
+                      {
+                        "key": "LegalOU",
+                        "value": "USA"
+                      },
+                      {
+                        "key": "OrgOU",
+                        "value": "GD"
+                      },
+                      {
+                        "key": "roleType",
+                        "value": "SSG-Custom"
+                      },
+                      {
+                        "key": "Team",
+                        "value": "commerceut"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Role",
+              "version": "2.92.0"
+            }
+          },
+          "catalog-api-demo-rotator-function": {
+            "id": "catalog-api-demo-rotator-function",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-function",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-function/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": "godaddy-lambdas-prod-us-west-2",
+                      "s3Key": "ecs/ecs_service_rotator/ecs_service_rotator-2.0.0.zip"
+                    },
+                    "handler": "ecs_service_rotator.index.handler",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "catalogapidemorotatorexecutionroleB41619B4",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "python3.9",
+                    "tags": [
+                      {
+                        "key": "BudgetId",
+                        "value": "001297-02"
+                      },
+                      {
+                        "key": "doNotShutdown",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Env",
+                        "value": "dev-private"
+                      },
+                      {
+                        "key": "LegalOU",
+                        "value": "USA"
+                      },
+                      {
+                        "key": "OrgOU",
+                        "value": "GD"
+                      },
+                      {
+                        "key": "Team",
+                        "value": "commerceut"
+                      }
+                    ],
+                    "timeout": 30
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.92.0"
+                }
+              },
+              "LogRetention": {
+                "id": "LogRetention",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-function/LogRetention",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-function/LogRetention/Resource",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.92.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                  "version": "2.92.0"
+                }
+              },
+              "LogGroup": {
+                "id": "LogGroup",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-function/LogGroup",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.92.0"
+                }
+              },
+              "InvokePermission": {
+                "id": "InvokePermission",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-function/InvokePermission",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                  "aws:cdk:cloudformation:props": {
+                    "action": "lambda:InvokeFunction",
+                    "functionName": {
+                      "Fn::GetAtt": [
+                        "catalogapidemorotatorfunction666ADD03",
+                        "Arn"
+                      ]
+                    },
+                    "principal": "events.amazonaws.com",
+                    "sourceArn": {
+                      "Fn::GetAtt": [
+                        "catalogapidemorotatorrule3C5BE4BF",
+                        "Arn"
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "2.92.0"
+            }
+          },
+          "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a": {
+            "id": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
+            "path": "catalog-api-demo-ecs-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
+            "children": {
+              "Code": {
+                "id": "Code",
+                "path": "catalog-api-demo-ecs-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "catalog-api-demo-ecs-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.92.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "catalog-api-demo-ecs-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.92.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.92.0"
+                }
+              },
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "catalog-api-demo-ecs-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole",
+                "children": {
+                  "ImportServiceRole": {
+                    "id": "ImportServiceRole",
+                    "path": "catalog-api-demo-ecs-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/ImportServiceRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.92.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "catalog-api-demo-ecs-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "BudgetId",
+                            "value": "001297-02"
+                          },
+                          {
+                            "key": "doNotShutdown",
+                            "value": "false"
+                          },
+                          {
+                            "key": "Env",
+                            "value": "dev-private"
+                          },
+                          {
+                            "key": "LegalOU",
+                            "value": "USA"
+                          },
+                          {
+                            "key": "OrgOU",
+                            "value": "GD"
+                          },
+                          {
+                            "key": "roleType",
+                            "value": "SSG-Custom"
+                          },
+                          {
+                            "key": "Team",
+                            "value": "commerceut"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.92.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "catalog-api-demo-ecs-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "catalog-api-demo-ecs-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "logs:PutRetentionPolicy",
+                                    "logs:DeleteRetentionPolicy"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": "*"
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+                            "roles": [
+                              {
+                                "Ref": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.92.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.92.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.92.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.129"
+            }
+          },
+          "catalog-api-demo-rotator-rule": {
+            "id": "catalog-api-demo-rotator-rule",
+            "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-rule",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-rule/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Events::Rule",
+                  "aws:cdk:cloudformation:props": {
+                    "description": "Rotates the service",
+                    "scheduleExpression": "cron(0 0 * * ? *)",
+                    "state": "ENABLED",
+                    "targets": [
+                      {
+                        "id": "Target0",
+                        "arn": {
+                          "Fn::GetAtt": [
+                            "catalogapidemorotatorfunction666ADD03",
+                            "Arn"
+                          ]
+                        },
+                        "input": "{\"cluster\":\"catalog-api-demo-cluster\",\"service\":\"catalog-api-demo-srvc\"}"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_events.CfnRule",
+                  "version": "2.92.0"
+                }
+              },
+              "AllowEventRulecatalogapidemoecsstackcatalogapidemorotatorfunction22A41012": {
+                "id": "AllowEventRulecatalogapidemoecsstackcatalogapidemorotatorfunction22A41012",
+                "path": "catalog-api-demo-ecs-stack/catalog-api-demo-rotator-rule/AllowEventRulecatalogapidemoecsstackcatalogapidemorotatorfunction22A41012",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                  "aws:cdk:cloudformation:props": {
+                    "action": "lambda:InvokeFunction",
+                    "functionName": {
+                      "Fn::GetAtt": [
+                        "catalogapidemorotatorfunction666ADD03",
+                        "Arn"
+                      ]
+                    },
+                    "principal": "events.amazonaws.com",
+                    "sourceArn": {
+                      "Fn::GetAtt": [
+                        "catalogapidemorotatorrule3C5BE4BF",
+                        "Arn"
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_events.Rule",
+              "version": "2.92.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "catalog-api-demo-ecs-stack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "catalog-api-demo-ecs-stack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.92.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.129"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@gd-safeguard/godaddy-constructs.GDStack",
+          "version": "5.4.4"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.1.129"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.92.0"
+    }
+  }
+}

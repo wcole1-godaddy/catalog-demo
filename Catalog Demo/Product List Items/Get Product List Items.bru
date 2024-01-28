@@ -1,0 +1,19 @@
+meta {
+  name: Get Product List Items
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-list-items?productId=2bY4ilmk8X23I48kuMAXKi14crW
+  body: none
+  auth: none
+}
+
+query {
+  productId: 2bY4ilmk8X23I48kuMAXKi14crW
+}
+
+vars:pre-request {
+  storeId: 1234
+}

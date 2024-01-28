@@ -1,0 +1,19 @@
+{
+  "version": "33.0.0",
+  "files": {
+    "10b02649b11a2cab7a19428f5a81a4cea5eb8cf45a894db6e164040de33845d2": {
+      "source": {
+        "path": "ai-asst-v2-ecs-patterns-stack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "761615930507-us-west-2": {
+          "bucketName": "cdk-hnb659fds-assets-761615930507-us-west-2",
+          "objectKey": "10b02649b11a2cab7a19428f5a81a4cea5eb8cf45a894db6e164040de33845d2.json",
+          "region": "us-west-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

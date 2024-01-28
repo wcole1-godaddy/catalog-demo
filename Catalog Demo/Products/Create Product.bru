@@ -1,0 +1,23 @@
+meta {
+  name: Create Product
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/products
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "T-Shirt",
+    "sku": "1234"
+  }
+}
+
+vars:pre-request {
+  scope: commerce.product:read
+  storeId: 1234
+}

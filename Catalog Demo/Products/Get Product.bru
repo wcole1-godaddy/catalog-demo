@@ -1,0 +1,16 @@
+meta {
+  name: Get Product
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/products/2bWV7An7kOiTD1mjS1XbsOsZQKP
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  scope: commerce.product:read
+  storeId: 1234
+}

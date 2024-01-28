@@ -1,0 +1,74 @@
+{
+ "Resources": {
+  "aiasstv2ecrrepository90BB2C49": {
+   "Type": "AWS::ECR::Repository",
+   "Properties": {
+    "EncryptionConfiguration": {
+     "EncryptionType": "KMS",
+     "KmsKey": "arn:aws:kms:us-west-2:018549029650:alias/commerceut"
+    },
+    "ImageScanningConfiguration": {
+     "ScanOnPush": true
+    },
+    "RepositoryName": "ai-asst-v2-ecr-repo",
+    "Tags": [
+     {
+      "Key": "BudgetId",
+      "Value": "001297-03"
+     },
+     {
+      "Key": "Env",
+      "Value": "dev"
+     },
+     {
+      "Key": "LegalOU",
+      "Value": "USA"
+     },
+     {
+      "Key": "OrgOU",
+      "Value": "GD"
+     },
+     {
+      "Key": "Team",
+      "Value": "commerceut"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "ai-asst-v2-ecs-ecr-stack/ai-asst-v2-ecr-repository/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSszTSM1BMLC/WTU7J1s3JTNKrBnLiU5OL9KqDUgvyizNL8osqdZzT8hC8Wgi3OL+0KDm1VicvPyVVL6tYv8zQQs/QDGhaVnFmpm5RaV5JZm6qXhCEBgCHFIjJaQAAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "ai-asst-v2-ecs-ecr-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "ExportsOutputFnGetAttaiasstv2ecrrepository90BB2C49ArnE08C10DE": {
+   "Value": {
+    "Fn::GetAtt": [
+     "aiasstv2ecrrepository90BB2C49",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "ai-asst-v2-ecs-ecr-stack:ExportsOutputFnGetAttaiasstv2ecrrepository90BB2C49ArnE08C10DE"
+   }
+  },
+  "ExportsOutputRefaiasstv2ecrrepository90BB2C49100245EC": {
+   "Value": {
+    "Ref": "aiasstv2ecrrepository90BB2C49"
+   },
+   "Export": {
+    "Name": "ai-asst-v2-ecs-ecr-stack:ExportsOutputRefaiasstv2ecrrepository90BB2C49100245EC"
+   }
+  }
+ }
+}

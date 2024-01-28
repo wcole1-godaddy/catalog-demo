@@ -1,0 +1,15 @@
+meta {
+  name: Get Product List Item
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-list-items/2bYVCeqJFD9y2ZNuVshdpYvY2yK
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  storeId: 1234
+}
