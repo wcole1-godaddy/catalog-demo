@@ -1,7 +1,7 @@
 import {
   pgTable,
   varchar,
-  date,
+  timestamp,
   index,
   unique,
   integer,
@@ -33,8 +33,8 @@ export const products = pgTable(
     status: productStatusEnum("product_status"),
     price: integer("price").default(0).notNull(),
     taxCategory: varchar("tax_category", { length: 255 }),
-    createdAt: date("created_at").notNull().defaultNow(),
-    updatedAt: date("updated_at"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    updatedAt: timestamp("updated_at"),
   },
   (t) => ({
     prodStoreIndx: index("store_id_idx").on(t.storeId),
@@ -57,8 +57,8 @@ export const productLists = pgTable(
     name: varchar("name", { length: 255 }).notNull(),
     slug: varchar("slug", { length: 255 }).notNull(),
     description: varchar("description", { length: 255 }),
-    createdAt: date("createdAt").notNull().defaultNow(),
-    updatedAt: date("updatedAt"),
+    createdAt: timestamp("createdAt").notNull().defaultNow(),
+    updatedAt: timestamp("updatedAt"),
   },
   (t) => ({
     pListStoreInd: index("product_lists_store_index").on(t.storeId),
@@ -78,8 +78,8 @@ export const productListItems = pgTable(
     productListId: varchar("product_list_id", { length: 255 }).notNull(),
     productId: varchar("product_id", { length: 255 }).notNull(),
     position: integer("position").notNull().default(0),
-    createdAt: date("createdAt").notNull().defaultNow(),
-    updatedAt: date("updatedAt"),
+    createdAt: timestamp("createdAt").notNull().defaultNow(),
+    updatedAt: timestamp("updatedAt"),
   },
   (t) => ({
     storeIndex: index("product_list_items_store_index").on(t.storeId),

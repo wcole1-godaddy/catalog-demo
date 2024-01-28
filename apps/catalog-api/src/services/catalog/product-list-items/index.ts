@@ -24,7 +24,7 @@ export async function createProductListItem({
       id,
       storeId,
       ...input,
-      createdAt: new Date().toISOString(),
+      createdAt: new Date(),
     };
 
     const result = insertProductListItemSchema.safeParse(productListItemInput);
@@ -62,7 +62,7 @@ export async function updateProductListItem({
     const response = takeFirst(
       await db
         .update(productListItems)
-        .set({ ...input, updatedAt: new Date().toISOString() })
+        .set({ ...input, updatedAt: new Date() })
         .where(
           and(
             eq(productListItems.storeId, storeId),

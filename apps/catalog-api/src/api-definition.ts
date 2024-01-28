@@ -27,6 +27,8 @@ export const apiDefinition = createApiDefinition({
       params: z.object({ storeId: z.string() }),
       query: z.object({
         include: z.enum(["product-list-items"]).optional(),
+        page: z.coerce.number().optional(),
+        pageSize: z.coerce.number().optional().default(50),
       }),
       response: z.object({ products: z.array(Product) }),
       scopes: ["commerce.product:read"],

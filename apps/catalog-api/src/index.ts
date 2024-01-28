@@ -1,5 +1,3 @@
-import fs from "fs";
-import https from "https";
 import express from "express";
 import { createApp } from "@gdcorp-commerce/builder";
 import { ZodError } from "zod";
@@ -35,19 +33,16 @@ const app = createApp({
   app: express(),
 });
 
-// const app = express();
+// let server = http.createServer(app as any);
 
-// const credentials = {
-//   key: process.env.SERVER_KEY,
-//   cert: process.env.CLIENT_KEY,
-// };
+// if (process.env.NODE_ENV !== "local") {
+//   const credentials: { key: string | Buffer; cert: string | Buffer } = {
+//     key: process.env.SERVER_KEY || "",
+//     cert: process.env.SERVER_CERT || "",
+//   };
 
-// if (process.env.NODE_ENV === "local") {
-//   const key = fs.readFileSync(__dirname + "/../certs/selfsigned.key");
-//   const cert = fs.readFileSync(__dirname + "/../certs/selfsigned.crt");
+//   server = https.createServer(credentials, app as any);
 // }
-
-// const server = https.createServer(credentials, app);
 
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
@@ -56,7 +51,10 @@ app.get("/health", (req, res) => {
 app.get("/v2/commerce/stores/:storeId/products", async (req, res) => {
   const storeId = req.params.storeId;
   const include = req.query.include;
-  const result = await getProducts({ storeId, include });
+  const page = req.query.page;
+  const pageSize = req.query.pageSize;
+
+  const result = await getProducts({ storeId, include, page, pageSize });
 
   if (result.status === "error") {
     return res.status(500).json({ error: result.error } as any);

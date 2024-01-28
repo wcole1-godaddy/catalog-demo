@@ -52,12 +52,13 @@ export async function updateProduct({
 }: {
   id: string;
   storeId: string;
-  input: Partial<Omit<Product, "id" | "storeId" | "updatedAt" | "createdAt">>;
+  input: Partial<Product>;
 }) {
+  const { createdAt, updatedAt, ...inputObj } = input;
   try {
     const response = await db
       .update(products)
-      .set({ ...input, updatedAt: new Date().toISOString() })
+      .set({ ...inputObj })
       .where(and(eq(products.storeId, storeId), eq(products.id, id)))
       .returning();
 
@@ -101,9 +102,13 @@ export async function deleteProduct({
 export async function getProducts({
   storeId,
   include,
+  page,
+  pageSize = 50,
 }: {
   storeId: string;
   include?: "product-list-items" | undefined;
+  page?: number;
+  pageSize?: number;
 }) {
   const withProductLists = include === "product-list-items";
 
@@ -117,7 +122,9 @@ export async function getProducts({
             }
           : {}),
       },
-      orderBy: (products, { asc }) => [asc(products.updatedAt)],
+      limit: pageSize,
+      offset: page ? (page - 1) * pageSize : undefined,
+      orderBy: (products, { desc }) => [desc(products.createdAt)],
     });
 
     const result = ProductsWithListItems.safeParse(response);
@@ -198,6 +205,8 @@ export async function batchUpdateProducts({
 
   try {
     const response = await Promise.all(promises);
+
+    console.log(response);
     return { status: "success", data: response };
   } catch (error) {
     return { status: "error", error };

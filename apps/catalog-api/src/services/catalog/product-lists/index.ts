@@ -29,7 +29,7 @@ export async function createProductList({
           id,
           storeId,
           ...input,
-          createdAt: new Date().toISOString(),
+          createdAt: new Date(),
         })
         .returning(),
     );
@@ -61,7 +61,7 @@ export async function updateProductList({
         .update(productLists)
         .set({
           ...input,
-          updatedAt: new Date().toISOString(),
+          updatedAt: new Date(),
         })
         .where(and(eq(productLists.id, id), eq(productLists.storeId, storeId)))
         .returning(),

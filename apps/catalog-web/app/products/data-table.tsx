@@ -9,6 +9,13 @@ import {
 } from "@tanstack/react-table";
 
 import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+import {
   Table,
   TableBody,
   TableCell,
@@ -18,6 +25,7 @@ import {
 } from "@/components/ui/table";
 import { Product } from "./columns";
 import { BulkActions } from "../components/bulk-actions";
+import { useSearchParams } from "next/navigation";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -36,7 +44,10 @@ export function DataTable<TData, TValue>({
   onSetDraft,
   onAddToList,
 }: DataTableProps<TData, TValue>) {
+  const searchParams = useSearchParams();
   const [rowSelection, setRowSelection] = React.useState({});
+
+  const page = Number(searchParams.get("page")) || 1;
 
   const table = useReactTable({
     data,
@@ -50,23 +61,33 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="space-y-2">
-      <div className="flex h-[32px]">
+      <div className="flex justify-between h-[32px]">
+        {table.getFilteredSelectedRowModel().rows.length > 0 ? (
+          <div className="space-x-2">
+            <BulkActions<TData>
+              productLists={productLists}
+              rows={table.getFilteredSelectedRowModel().rows}
+              onSetActive={onSetActive}
+              onSetDraft={onSetDraft}
+              onAddToList={onAddToList}
+            />
+          </div>
+        ) : null}
         <div className="flex items-center ml-auto space-x-2">
-          {table.getFilteredSelectedRowModel().rows.length > 0 ? (
-            <div className="space-x-2">
-              <BulkActions<TData>
-                productLists={productLists}
-                rows={table.getFilteredSelectedRowModel().rows}
-                onSetActive={onSetActive}
-                onSetDraft={onSetDraft}
-                onAddToList={onAddToList}
-              />
-            </div>
-          ) : null}
           <div className="text-sm text-muted-foreground">
             {table.getFilteredSelectedRowModel().rows.length} of{" "}
             {table.getFilteredRowModel().rows.length} row(s) selected.
           </div>
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious href={`/products?page=${page - 1}`} />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationNext href={`/products?page=${page + 1}`} />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
         </div>
       </div>
 

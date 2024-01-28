@@ -3,7 +3,7 @@ import { DataTable } from "./data-table";
 
 async function getData() {
   const res = await fetch(
-    "http://localhost:4000/v2/commerce/stores/1234/product-lists?include=product-list-items",
+    `${process.env.API_URL}/v2/commerce/stores/1234/product-lists?include=product-list-items`,
   );
 
   if (!res.ok) {

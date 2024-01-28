@@ -2,8 +2,7 @@ import { Badge } from "@/components/ui/badge";
 
 async function getProduct({ id }: { id: string }) {
   const res = await fetch(
-    `http://localhost:4000/v2/commerce/stores/1234/products/${id}?include=product-list-items`,
-    { cache: "force-cache" },
+    `${process.env.API_URL}/v2/commerce/stores/1234/products/${id}?include=product-list-items`,
   );
 
   if (!res.ok) {
@@ -15,9 +14,9 @@ async function getProduct({ id }: { id: string }) {
 
 async function getProductLists({ ids }: { ids: Array<string> }) {
   const res = await fetch(
-    `http://localhost:4000/v2/commerce/stores/1234/product-lists?ids=${ids.join(
-      ",",
-    )}`,
+    `${
+      process.env.API_URL
+    }/v2/commerce/stores/1234/product-lists?ids=${ids.join(",")}`,
     { cache: "force-cache" },
   );
 

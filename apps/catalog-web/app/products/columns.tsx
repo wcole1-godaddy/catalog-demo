@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ColumnDef } from "@tanstack/react-table";
 import { Image } from "lucide-react";
+import { format } from "date-fns";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 
@@ -11,7 +12,9 @@ export type Product = {
   status: "ACTIVE" | "DRAFT";
   name: string;
   price: number;
+  taxCategory?: string;
   productListItems: any[];
+  createdAt: string;
 };
 
 const USDollar = new Intl.NumberFormat("en-US", {
@@ -57,7 +60,7 @@ export const columns: ColumnDef<Product>[] = [
     accessorKey: "name",
     header: "Name",
     cell: ({ row }) => (
-      <Link href={`/admin/products/${row.original.id}`} className="underline">
+      <Link href={`/products/${row.original.id}`} className="underline">
         {row.original.name}
       </Link>
     ),
@@ -73,8 +76,28 @@ export const columns: ColumnDef<Product>[] = [
     cell: ({ row }) => <span>{USDollar.format(row.original.price / 100)}</span>,
   },
   {
+    accessorKey: "taxCategory",
+    header: "Tax Category",
+    cell: ({ row }) => (
+      <span>
+        {row?.original?.taxCategory
+          ? `${row.original.taxCategory?.charAt(0).toUpperCase()}${
+              row.original?.taxCategory && row?.original?.taxCategory.slice(1)
+            }`
+          : ""}
+      </span>
+    ),
+  },
+  {
     id: "lists",
     header: "Lists",
     cell: ({ row }) => <span>{row.original.productListItems?.length}</span>,
+  },
+  {
+    accessorKey: "createdAt",
+    header: "Created At",
+    cell: ({ row }) => (
+      <span>{format(row.original.createdAt, "MMM d, yyyy")}</span>
+    ),
   },
 ];
