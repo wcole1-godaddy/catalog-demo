@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-lists/2bXj2ohMUwK6YJ6ghzZt9bJLjBJ
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-lists/2bY4ilmk8X23I48kuMAXKi14crW
   body: none
   auth: none
+}
+
+query {
+  ~include: product-list-items
 }
 
 vars:pre-request {

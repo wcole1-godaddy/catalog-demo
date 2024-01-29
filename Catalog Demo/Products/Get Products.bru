@@ -5,9 +5,15 @@ meta {
 }
 
 get {
-  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/products
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/products?pageSize=50
   body: none
   auth: none
+}
+
+query {
+  pageSize: 50
+  ~include: product-list-items
+  ~page: 3
 }
 
 vars:pre-request {

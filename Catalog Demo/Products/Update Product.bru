@@ -5,7 +5,7 @@ meta {
 }
 
 put {
-  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/products/2bWV7An7kOiTD1mjS1XbsOsZQKP
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/products/2bbntN8SLkHcPi5UqP24iTHONXL
   body: json
   auth: none
 }
@@ -13,7 +13,10 @@ put {
 body:json {
   {
     "name": "Long Sleeve T-Shirt",
-    "sku": "1234"
+    "sku": "1234",
+    "status": "DRAFT",
+    "type": "PHYSICAL",
+    "price": 1000
   }
 }
 

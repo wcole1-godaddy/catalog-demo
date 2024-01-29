@@ -5,13 +5,9 @@ meta {
 }
 
 get {
-  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-lists?include=product-list-items
+  url: {{baseUrl}}/v2/commerce/stores/{{storeId}}/product-lists
   body: none
   auth: none
-}
-
-query {
-  include: product-list-items
 }
 
 vars:pre-request {

@@ -3,14 +3,14 @@
   "private": true,
   "scripts": {
     "dev": "tsx watch ./src/index.ts",
-    "build": "esbuild src/index.ts --bundle --platform=node --target=node14 --outfile=dist/index.js",
+    "build": "pnpm dlx esbuild src/index.ts --bundle --platform=node --target=node14 --outfile=dist/index.js",
     "generate": "drizzle-kit generate:pg"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/express": "^4.17.21",
-    "esbuild": "^0.19.10",
+    "esbuild": "^0.19.12",
     "eslint": "^8.56.0",
     "prettier": "^3.1.1",
     "tsx": "^4.7.0",
